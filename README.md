@@ -7,4 +7,4 @@
 - 将.vim文件拷贝到个人目录下
 - 使用vim打开任意文件，执行命令:PlugInstall
 > 本人使用插件不多（电脑垃圾，多了会卡），所以目前仅安装了ctrlp插件
-> 需要其他插件，可以到[https://vimawesome.com/]上收集一波
+> 需要其他插件，可以到 https://vimawesome.com/` 上收集一波
