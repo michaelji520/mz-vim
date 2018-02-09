@@ -39,7 +39,7 @@ set backspace=indent,eol,start  "使得backspace键可以正常工作
 set magic                       "正则匹配相关，\m:$ . * ^ 之外其他元字符都要加反斜杠;\v:任何元字符都不用加反斜杠
 set nowrap                      "设置自动换行(nowrap)
 set list                        "显示不可视字符
-set listchars=tab:>-,trail:~,extends:>,precedes:< "不可视字符标识eol:,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-,trail:~    "不可视字符标识eol:,tab:>-,trail:~,extends:>,precedes:<
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容 
 set background=dark             "设置背景色
 colorscheme molokai             "设置配色方案
