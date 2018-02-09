@@ -80,9 +80,9 @@ autocmd BufNewFile *.java,*.cpp,*.js,*.less,*.h exec ":call SetTitle()"
 "定义函数SetTitle(),自动插入文件头
 func SetTitle()
   call setline(1, "/**")
-  call append(line("."), " \* Copyright (c) 2014-2018 Zuoyebang, All rights reserved.")
+  call append(line("."), " \* Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.")
   call append(line(".")+1, " \* @fileoverview")
-  call append(line(".")+2, " \* @author zhangji01 | zhangji01@zuoyebang.com")
+  call append(line(".")+2, " \* @author Michael Zhang")
   call append(line(".")+3, " \* @version 1.0 | " . strftime("%Y-%m-%d") . " | " . "initial version")
   call append(line(".")+4, " */")
   autocmd BufNewFile * normal G
@@ -92,9 +92,9 @@ autocmd BufNewFile *.py,*.sh,*.php exec ":call SetComment()"
 
 func SetComment()
   call setline(1, "\#####################################################################")
-  call append(line("."), "\# Copyright (c) 2014-2018 Zuoyebang, All rights reserved.")
+  call append(line("."), "\# Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.")
   call append(line(".")+1, "\# @fileoverview")
-  call append(line(".")+2, "\# @author zhangji01 | zhangji01@zuoyebang.com")
+  call append(line(".")+2, "\# @author Michael Zhang")
   call append(line(".")+3, "\# @version 1.0 | ".strftime("%Y-%m-%d"))
   call append(line(".")+4, "\#####################################################################")
   autocmd BufNewFile * normal G
@@ -104,9 +104,9 @@ autocmd BufNewFile *.tpl,*.html exec ":call SetHtml()"
 
 func SetHtml()
   call setline(1, "\<!--")
-  call append(line("."), "\* Copyright (c) 2014-2018 Zuoyebang, All rights reserved.")
+  call append(line("."), "\* Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.")
   call append(line(".")+1, "\* @fileoverview")
-  call append(line(".")+2, "\* @author zhangji01 | zhangji01@zuoyebang.com")
+  call append(line(".")+2, "\* @author Michael Zhang")
   call append(line(".")+3, "\* @version 1.0 | ".strftime("%Y-%m-%d"))
   call append(line(".")+4, "\--!>")
   autocmd BufNewFile * normal G
