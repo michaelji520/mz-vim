@@ -76,7 +76,7 @@ filetype plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 新建文件自动填写文件头，根据不同文件类型设置不同格式注释
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile *.java,*.cpp,*.js,*.less,*.h exec ":call SetTitle()"
+autocmd BufNewFile *.java,*.cpp,*.js,*.less,*.scss,*.h exec ":call SetTitle()"
 "定义函数SetTitle(),自动插入文件头
 func SetTitle()
   call setline(1, "/**")
@@ -134,4 +134,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+
+" 这里采用的自动补全已经有新的系列:neocomplete
+Plugin 'shougo/neocomplcache.vim'
+let g:neocomplcache_enable_at_startup = 1
+
 call vundle#end()
