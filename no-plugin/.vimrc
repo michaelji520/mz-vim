@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 常用配置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                      "显示行号
@@ -22,7 +22,7 @@ set hlsearch                    "高亮搜索结果
 set autoread                    "设置文件改动时自动载入
 set nobackup                    "设置不备份
 set noswapfile                  "禁止生成临时文件
-set undodir=~/.vim_undodir      "vim保存历史操作文件的位置
+set undodir=~/.vim_undodir      "vim保存历史操作文件的位置，需要手动创建
 set autoindent                  "设置自动缩进
 set smartindent                 "设置智能缩进
 set expandtab                   "使用空格替换tab，不使用：noexpandtab
@@ -39,7 +39,7 @@ set backspace=indent,eol,start  "使得backspace键可以正常工作
 set magic                       "正则匹配相关，\m:$ . * ^ 之外其他元字符都要加反斜杠;\v:任何元字符都不用加反斜杠
 set nowrap                      "设置自动换行(nowrap)
 set list                        "显示不可视字符
-set listchars=tab:--,trail:~    "不可视字符标识eol:,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-,trail:~    "不可视字符标识eol:,tab:>-,trail:~,extends:>,precedes:<
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容 
 set background=dark             "设置背景色
 colorscheme molokai             "设置配色方案
@@ -66,17 +66,19 @@ nnoremap <Leader>kw <C-W>k
 " 跳转至下方的子窗口
 nnoremap <Leader>jw <C-W>j
 " 窗口大小调整
-nmap 7 :res +2<CR> " increase pane by 2
-nmap 8 :res -2<CR> " decrease pane by 2
-nmap 9 :vertical res -2<CR> " vertical increase pane by 2
-nmap 0 :vertical res +2<CR> " vertical decrease pane by 2
+"nmap 7 :res +2<CR> " increase pane by 2
+"nmap 8 :res -2<CR> " decrease pane by 2
+" vertical increase pane by 2
+nmap ( :vertical resize -2<CR>
+" vertical decrease pane by 2
+nmap ) :vertical resize +2<CR>
 
 filetype on                     "检测文件类型
 filetype plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 新建文件自动填写文件头，根据不同文件类型设置不同格式注释
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile *.java,*.cpp,*.js,*.less,*.h exec ":call SetTitle()"
+autocmd BufNewFile *.java,*.cpp,*.js,*.less,*.scss,*.h exec ":call SetTitle()"
 "定义函数SetTitle(),自动插入文件头
 func SetTitle()
   call setline(1, "/**")

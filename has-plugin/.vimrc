@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 常用配置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                      "显示行号
@@ -22,7 +22,7 @@ set hlsearch                    "高亮搜索结果
 set autoread                    "设置文件改动时自动载入
 set nobackup                    "设置不备份
 set noswapfile                  "禁止生成临时文件
-set undodir=~/.vim_undodir      "vim保存历史操作文件的位置
+set undodir=~/.vim_undodir      "vim保存历史操作文件的位置，需要手动创建
 set autoindent                  "设置自动缩进
 set smartindent                 "设置智能缩进
 set expandtab                   "使用空格替换tab，不使用：noexpandtab
@@ -66,10 +66,12 @@ nnoremap <Leader>kw <C-W>k
 " 跳转至下方的子窗口
 nnoremap <Leader>jw <C-W>j
 " 窗口大小调整
-nmap 7 :res +2<CR> " increase pane by 2
-nmap 8 :res -2<CR> " decrease pane by 2
-nmap 9 :vertical res -2<CR> " vertical increase pane by 2
-nmap 0 :vertical res +2<CR> " vertical decrease pane by 2
+"nmap 7 :res +2<CR> " increase pane by 2
+"nmap 8 :res -2<CR> " decrease pane by 2
+" vertical increase pane by 2
+nmap ( :vertical resize -2<CR>
+" vertical decrease pane by 2
+nmap ) :vertical resize +2<CR>
 
 filetype on                     "检测文件类型
 filetype plugin on
@@ -135,8 +137,9 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-" 这里采用的自动补全已经有新的系列:neocomplete
-Plugin 'shougo/neocomplcache.vim'
-let g:neocomplcache_enable_at_startup = 1
+" 轻量级的自动补全插件
+Plugin 'eikenb/acp'
 
 call vundle#end()
+
+
