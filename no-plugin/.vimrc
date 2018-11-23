@@ -22,7 +22,8 @@ set hlsearch                    "高亮搜索结果
 set autoread                    "设置文件改动时自动载入
 set nobackup                    "设置不备份
 set noswapfile                  "禁止生成临时文件
-set undodir=~/.vim_undodir      "vim保存历史操作文件的位置，需要手动创建
+set undofile                    "记录操作历史
+set undodir=$HOME/.vim/undo     "vim保存历史操作文件的位置，需要手动创建
 set autoindent                  "设置自动缩进
 set smartindent                 "设置智能缩进
 set expandtab                   "使用空格替换tab，不使用：noexpandtab
